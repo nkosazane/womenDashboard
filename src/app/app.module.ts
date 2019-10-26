@@ -9,8 +9,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './component/login/login.component';
-// import { RegisterComponent } from './component/register/register.component';
-
+import { AuthService } from './service/auth.service';
+import { AuthGuardService } from './service/auth-guard.service';
+import { FormsModule } from '@angular/forms';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC1TA8JQDneK2YCLgDNUPpGQgFwvPByeaw",
@@ -27,8 +28,7 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
-    // RegisterComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +36,9 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
