@@ -1,1 +1,11 @@
-<p>home works!</p>
+  
+<div class="container">
+
+  <!-- Main component for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <p *ngIf="authService.isLoggedIn()">
+      <a class="btn btn-lg btn-primary" href="" role="button" (click)="authService.logout()">Logout</a>
+    </p>
+  </div>
+
+</div> <!-- /container -->
