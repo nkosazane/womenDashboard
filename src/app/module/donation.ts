@@ -4,4 +4,5 @@ class Donation{
     location: string;
     type: string;
     date: Date;
+    key?: string;
 }
