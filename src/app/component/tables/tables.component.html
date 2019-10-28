@@ -1,1 +1,100 @@
-<p>tables works!</p>
+<!-- <p>tables works!</p> -->
+<br>
+<br>
+<br>
+<br>
+<table align="center" border="2">
+
+<h1 class="User" >User Information</h1>
+<br>
+   <label>Name</label>
+   {{userList?.displayName}}
+
+    &nbsp;
+    &nbsp;
+    
+   <label>Gender</label>
+ {{userList?.gender}}
+    &nbsp;
+    &nbsp;
+    
+    
+   <label>Age</label>
+ {{userList?.age}}
+     &nbsp;
+     &nbsp;
+
+   <label>Email</label>
+ {{userList?.email}}
+
+</table>
+   <!-- <label>User ID:</label>
+ {{userList?.userid}} -->
+<br><br>
+
+    <table  align="center"  border="2">
+
+    <h1 align="center">Donation History</h1>
+    <br>
+    <br>
+
+    <h1 align="center">Donation for Money</h1>
+    <br>
+            <label>Name</label>
+            {{donation?.displayName}}
+         
+             &nbsp;
+             &nbsp;
+
+             <label>Surname</label>
+             {{donation?.gender}}
+                &nbsp;
+                &nbsp;
+
+            <label>Location</label>
+          {{donation?.location}}
+             &nbsp;
+             &nbsp;
+             
+             
+            <label>Type of Donation</label>
+          {{donation?.type}}
+              &nbsp;
+              &nbsp;
+         
+            <!-- <label>Email</label>
+          {{userList?.email}} -->
+         
+         </table>
+<br>
+<br>
+         <table align="center"  border="2">
+             
+         <h1 align="center">Donation for Items</h1>
+    <br>
+         <label>Name</label>
+         {{donation?.displayName}}
+      
+          &nbsp;
+          &nbsp;
+
+          <label>Surname</label>
+          {{donation?.gender}}
+             &nbsp;
+             &nbsp;
+<br>
+         <label>Location</label>
+       {{donation?.location}}
+          &nbsp;
+          &nbsp;
+          <br>
+          
+         <label>Type of Donation</label>
+       {{donation?.type}}
+           &nbsp;
+           &nbsp;
+      <br>
+         <!-- <label>Email</label>
+       {{userList?.email}} -->
+      
+      </table>
