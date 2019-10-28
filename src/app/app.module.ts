@@ -12,6 +12,11 @@ import { LoginComponent } from './component/login/login.component';
 import { AuthService } from './service/auth.service';
 import { AuthGuardService } from './service/auth-guard.service';
 import { FormsModule } from '@angular/forms';
+import { TablesComponent } from './component/tables/tables.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { UserProfileComponent } from './component/user-profile/user-profile.component';
+import { DonationsComponent } from './component/donations/donations.component';
+import { ChatsComponent } from './component/chats/chats.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC1TA8JQDneK2YCLgDNUPpGQgFwvPByeaw",
@@ -28,7 +33,12 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    TablesComponent,
+    DashboardComponent,
+    UserProfileComponent,
+    DonationsComponent,
+    ChatsComponent
   ],
   imports: [
     BrowserModule,
