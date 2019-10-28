@@ -16,8 +16,8 @@ export class AdminService {
     return this.angularfire.collection('users').snapshotChanges();
   }
 
-  getDonations(){
-    return this.angularfire.collection('donation').snapshotChanges();
+  getDonations(key){
+    return this.angularfire.collection('donation').doc(key).collection('donators').valueChanges();
   }
 
   getPeriods(){
