@@ -8,19 +8,25 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./tables.component.scss']
 })
 export class TablesComponent implements OnInit {
-
+// donator={
+// name:"",
+// surname:""
+// }
+// donators:any;
   users = {} as Users;
   donation = {} as Donation;
   chats = {} as Chats;
 
   userList;
+
   donationList;
   chatsList;
 
   constructor(private adminServ: AdminService,
     private angularfire: AngularFirestore) { 
 
-    //user list
+
+    // user list
   this.angularfire.collection('users').snapshotChanges().subscribe(data => {
     this.userList = data.map(e => {
       return{
@@ -32,7 +38,7 @@ export class TablesComponent implements OnInit {
     
   })
 
-    //donation list
+    // donation list
     this.angularfire.collection('donation').snapshotChanges().subscribe(data => {
       this.donationList = data.map(e => {
         return{
@@ -79,6 +85,14 @@ export class TablesComponent implements OnInit {
   }
 
   ngOnInit() {
+//     this.angularfire.collection('donation').get().then((snapshot)=>{
+    
+// snapshot.docs.forEach(doc=>{
+//   console.log(doc.data())
+// })
+//     })
+   
   }
+
 
 }
