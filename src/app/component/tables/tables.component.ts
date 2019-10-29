@@ -8,11 +8,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./tables.component.scss']
 })
 export class TablesComponent implements OnInit {
-// donator={
-// name:"",
-// surname:""
-// }
-// donators:any;
+
   users = {} as Users;
   donation = {} as Donation;
   chats = {} as Chats;

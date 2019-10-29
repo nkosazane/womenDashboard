@@ -6,19 +6,19 @@
 <br>
 
 <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" [(ngModel)]="user.name" required>
   
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" [(ngModel)]="user.password" required>
   
-      <button type="submit" routerLink="/home">Login</button>
-      <label>
+      <button (click)="signInWithEmail()">Login</button>
+      <!-- <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
      <br>
      <br>
       <button type="button" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <span class="psw">Forgot <a href="#">password?</a></span> -->
     </div>
 
   
