@@ -11,9 +11,11 @@ export class TablesComponent implements OnInit {
 
   users = {} as Users;
   donation = {} as Donation;
+  chats = {} as Chats;
 
   userList;
   donationList;
+  chatsList;
 
   constructor(private adminServ: AdminService,
     private angularfire: AngularFirestore) { 
@@ -27,6 +29,7 @@ export class TablesComponent implements OnInit {
       } as Users
     });
     console.log(this.userList)
+    
   })
 
     //donation list
@@ -39,6 +42,39 @@ export class TablesComponent implements OnInit {
       });
       console.log(this.donationList)
     })
+
+    //chats list
+    this.angularfire.collection('chats').snapshotChanges().subscribe(data => {
+      this.chatsList = data.map(e => {
+        return{
+          key: e.payload.doc.id,
+          ...e.payload.doc.data()
+        } as Chats
+      });
+      console.log(this.chatsList)
+    })
+
+      //chats1 list
+      this.angularfire.collection('chats1').snapshotChanges().subscribe(data => {
+        this.chatsList = data.map(e => {
+          return{
+            key: e.payload.doc.id,
+            ...e.payload.doc.data()
+          } as Chats
+        });
+        console.log(this.chatsList)
+      })
+
+          //chats2 list
+          this.angularfire.collection('chats2').snapshotChanges().subscribe(data => {
+            this.chatsList = data.map(e => {
+              return{
+                key: e.payload.doc.id,
+                ...e.payload.doc.data()
+              } as Chats
+            });
+            console.log(this.chatsList)
+          })
 
   }
 
