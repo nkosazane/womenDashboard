@@ -5,4 +5,5 @@ class Donation{
     type: string;
     date: Date;
     key?: string;
+    userid: string;
 }

@@ -8,6 +8,7 @@ export class AdminService {
   private userDoc: AngularFirestoreDocument<Users>
   private donationDoc: AngularFirestoreDocument<Donation>
   private periodsDoc: AngularFirestoreDocument<Periods>
+  private chatsDoc: AngularFirestoreDocument<Chats>
 
   constructor(private angularfire: AngularFirestore) { }
 
@@ -17,10 +18,14 @@ export class AdminService {
   }
 
   getDonations(key){
-    return this.angularfire.collection('donation').doc(key).collection('donators').valueChanges();
+    return this.angularfire.collection('donation').doc('donators').collection(key).valueChanges();
   }
 
   getPeriods(){
     return this.angularfire.collection('tracker').snapshotChanges();
+  }
+
+  getChats(){
+    return this.angularfire.collection('chats').snapshotChanges();
   }
 }
