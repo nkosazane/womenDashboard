@@ -5,9 +5,11 @@ table {
   }
   
   td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid black;
     text-align: left;
-    padding: 2px;
+    padding: 8px;
+    border-collapse: collapse;
+  
   }
   
   tr:nth-child(even) {

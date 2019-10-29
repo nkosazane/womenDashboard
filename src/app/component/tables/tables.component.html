@@ -36,3 +36,102 @@
  
   </tr>
 </table>
+<br>
+<table  style="width:100%">
+  <br>
+<caption><b>Cancer Chat History</b></caption>
+<br>
+  <tr>
+    <th>Name</th>
+    <th>Message</th>
+    <th>UserID</th>
+  </tr>
+  <tr>
+   <td>
+      <div *ngFor="let chats of chatsList">
+        {{chats?.Name}}
+        &nbsp;
+        &nbsp;
+        </div>
+   </td>
+   <td>
+  <div *ngFor="let chats of chatsList">
+      {{chats?.Message}}
+        
+  </div>
+   </td>
+ <td>
+    <div *ngFor="let chats of chatsList">
+        {{chats?.UserID}}
+      
+      </div>
+ </td>
+
+  </tr>
+</table>
+<br>
+<table  style="width:100%">
+    <br>
+  <caption><b>Martenal Issue Chat History</b></caption>
+  <br>
+    <tr>
+      <th>Name</th>
+      <th>Message</th>
+      <th>UserID</th>
+    </tr>
+    <tr>
+     <td>
+        <div *ngFor="let chats1 of chatsList1">
+          {{chats1?.Name}}
+          &nbsp;
+          &nbsp;
+          </div>
+     </td>
+     <td>
+    <div *ngFor="let chats1 of chatsList1">
+        {{chats1?.Message}}
+          
+    </div>
+     </td>
+   <td>
+      <div *ngFor="let chats1 of chatsList1">
+          {{chats1?.UserID}}
+        
+        </div>
+   </td>
+  
+    </tr>
+  </table>
+  <br>
+  <table  style="width:100%">
+      <br>
+    <caption><b>Mammography Chat History</b></caption>
+    <br>
+      <tr>
+        <th>Name</th>
+        <th>Message</th>
+        <th>UserID</th>
+      </tr>
+      <tr>
+       <td>
+          <div *ngFor="let chats2 of chatsList2">
+            {{chats2?.Name}}
+            &nbsp;
+            &nbsp;
+            </div>
+       </td>
+       <td>
+      <div *ngFor="let chats2 of chatsList2">
+          {{chats2?.Message}}
+            
+      </div>
+       </td>
+     <td>
+        <div *ngFor="let chats2 of chatsList2">
+            {{chats2?.UserID}}
+          
+          </div>
+     </td>
+    
+      </tr>
+    </table>
