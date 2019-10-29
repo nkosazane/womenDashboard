@@ -100,18 +100,18 @@ a:hover{ text-decoration: none; }
     color: #333 ; display: block;
     }
 
-      .dropdown-menu-over .menu{  max-height: 200px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow-x: hidden;}
+//       .dropdown-menu-over .menu{  max-height: 200px;
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+//     overflow-x: hidden;}
 
-    .navbar-nav>.notifications-menu>.dropdown-menu li .menu>li>a {
-    color: #444444;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 10px;
-}
+//     .navbar-nav>.notifications-menu>.dropdown-menu li .menu>li>a {
+//     color: #444444;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     padding: 10px;
+// }
 .navbar-nav>.notifications-menu>.dropdown-menu li .menu>li>a>.glyphicon, .navbar-nav>.notifications-menu>.dropdown-menu li .menu>li>a>.fa, .navbar-nav>.notifications-menu>.dropdown-menu li .menu>li>a>.ion {
     width: 20px;
 }
@@ -212,13 +212,7 @@ a.navbar-brand {
 
 .fliph .user-panel{ display: none; }
 
-/*!
- * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- *//*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
- html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;
+html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;
     -webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}
     h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}
     hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;

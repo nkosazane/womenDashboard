@@ -36,15 +36,16 @@ export class TablesComponent implements OnInit {
   })
 
     // donation list
-    this.angularfire.collection('donation').snapshotChanges().subscribe(data => {
-      this.donationList = data.map(e => {
-        return{
-          key: e.payload.doc.id,
-          ...e.payload.doc.data()
-        } as Donation
-      });
-      console.log(this.donationList)
-    })
+    // this.angularfire.collection('donation').snapshotChanges().subscribe(data => {
+    //   this.donationList = data.map(e => {
+    //     return{
+    //       key: e.payload.doc.id,
+    //       ...e.payload.doc.data()
+    //     } as Donation
+    //   });
+    //   console.log(this.donationList)
+    // })
+    
   }
 
   ngOnInit() {
