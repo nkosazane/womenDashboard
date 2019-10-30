@@ -52,20 +52,20 @@ form {
   /* Add padding to containers */
   .container {
     padding: 16px;
-    height:43em; 
+    height:80em; 
     background-size:cover;
-     width:auto;
-    background-color:#e07394 ;
-    background-position:100% 100% ;
-    background-repeat: no-repeat;
+    widows: 500px;;
+    background-color:#e07394 !important;
+    background-position:100% 100%;
+
     
     .img-circle {
-      float:left;
-      margin-left:100px;
-      margin-top: 20px;
-      width: 200px;
-      height: 200px;
-      border-radius: 150%;
+      float:center;
+      margin-left:580px;
+      margin-top:20px;
+      width: 700px;
+      height:800px;
+      border-radius:180%;
       overflow:hidden; 
       
   }
