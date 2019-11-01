@@ -4,6 +4,7 @@ table {
     padding: 20px;
     // border: 1px solid black;
     border-radius: 8px;
+    // width: 20%;
   }
   
   td, th {
@@ -51,9 +52,9 @@ table {
     right: 0;
     left: 0;
     z-index: 1030;
-    background: #FFFFFF;
+    background: #e07394;
     height: 60px;
-    color: white;
+    color: #e07394;
   }
   
   .dropdown-menu {
@@ -91,8 +92,8 @@ table {
   }
   
   .inforide {
-    box-shadow: 1px 2px 8px 0px #f1f1f1;
-    background-color: white;
+    box-shadow: 1px 2px 8px 0px #e07394;
+    background-color: #e07394;
     border-radius: 8px;
     height: 500px;
     // width: 700px;
@@ -221,7 +222,7 @@ table {
   }
   
   #mainNav.navbar-dark .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
-    color: #D04153;
+    color: white;
   }
   
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
@@ -313,16 +314,16 @@ table {
   }
   
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a {
-    color: white !important;
-    background-color: #495057;
+    color: #ac367e !important;
+    background-color: #ac367e;
   }
   
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a:hover {
-    color: white;
+    color:#ac367e;
   }
   
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav {
-      background: #f8f9fa;
+      background: #ac367e;
   }
   
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a {
@@ -386,9 +387,16 @@ table {
   caption{
     font-size: 10px;
      }
-     .navbar-nav2{
-      color: #e07394;  
-
-
-   
-  }
+//  cards
+.my-card
+{
+  
+    position:absolute;
+    left:40%;
+    top:-20px;
+    border-radius:80%;
+    // width:30%
+}
+.jumbotron{
+  margin-top: 70px;
+}

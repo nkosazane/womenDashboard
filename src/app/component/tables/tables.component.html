@@ -64,12 +64,12 @@
 
 
 
-<table class="User" style="margin-left:15%">
+<!-- <table class="User" style="margin-left:15%">
   <br>
-  <br>
+  <br> -->
 <!-- <caption><b>User Information</b></caption>
 <caption><b>User Information</b></caption> -->
-<h1> User Information</h1>
+<!-- <h1> User Information</h1>
 <br>
   <tr>
     <th>Name</th>
@@ -203,4 +203,206 @@
      </td>
     
       </tr>
-    </table>
+    </table> -->
+    <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
+">
+
+<div class="jumbotron">
+<div class="row w-100">
+        <div  style="margin-left:15%" class="col-md-4">
+            <div class="card border-info mx-sm-1 p-3">
+                <div class="card border-info shadow text-info p-3 my-card" >
+                  <span class="fa fa-car" aria-hidden="true"></span></div>
+                <!-- <div class="text-info text-center mt-3">
+                  <h4>Cars</h4>
+                </div> -->
+                <div class="text-info text-center mt-2">
+                    
+                  
+<table class="User" >
+    <br>
+    <br>
+  <!-- <caption><b>User Information</b></caption>
+  <caption><b>User Information</b></caption> -->
+  <h1> User Information</h1>
+  <br>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+     <td>
+        <div *ngFor="let users of userList">
+            {{users?.displayName}}
+          
+          </div>
+     </td>
+     <td>
+        <div *ngFor="let users of userList">
+            {{users?.gender}}
+          
+          </div>
+          <td>
+              <div *ngFor="let users of userList">
+                  {{users?.age}}
+                
+                </div>
+          </td>
+   <td>
+      <div *ngFor="let users of userList">
+          {{users?.email}}
+        
+        </div>
+   </td>
+   
+   
+   
+    </tr>
+  </table>
+                
+                </div>
+            </div>
+        </div>
+        <div  class="col-md-4">
+            <div class="card border-success mx-sm-1 p-3">
+                <div class="card border-success shadow text-success p-3 my-card">
+                  <span class="fa fa-eye" aria-hidden="true"></span>
+                </div>
+                <!-- <div class="text-success text-center mt-3">
+                  <h4>Eyes</h4>
+                </div> -->
+
+                <div class="text-success text-center mt-2">
+                    <table >
+                        <br>
+                      <h1>Cancer Chat History</h1>
+                      <br>
+                        <tr>
+                          <th>Name</th>
+                          <th>Message</th>
+                          <th>UserID</th>
+                        </tr>
+                        <tr>
+                         <td>
+                            <div *ngFor="let chats of chatsList">
+                              {{chats?.Name}}
+                              &nbsp;
+                              &nbsp;
+                              </div>
+                         </td>
+                         <td>
+                        <div *ngFor="let chats of chatsList">
+                            {{chats?.Message}}
+                              
+                        </div>
+                         </td>
+                       <td>
+                          <div *ngFor="let chats of chatsList">
+                              {{chats?.UserID}}
+                            
+                            </div>
+                       </td>
+                      
+                        </tr>
+                      </table>
+                </div>
+            </div>
+        </div>
+        &nbsp;
+        &nbsp;
+
+        
+        <div style="margin-left:15%" class="col-md-4">
+            <div class="card border-danger mx-sm-1 p-3">
+                <div class="card border-danger shadow text-danger p-3 my-card" >
+                  <span class="fa fa-heart" aria-hidden="true"></span>
+                </div>
+               
+                <div class="text-danger text-center mt-2">
+                    <table >
+                        <br>
+                      <h1>Martenal Issue Chat History</h1>
+                      <br>
+                        <tr>
+                          <th>Name</th>
+                          <th>Message</th>
+                          <th>UserID</th>
+                        </tr>
+                        <tr>
+                         <td>
+                            <div *ngFor="let chats1 of chatsList1">
+                              {{chats1?.Name}}
+                              &nbsp;
+                              &nbsp;
+                              </div>
+                         </td>
+                         <td>
+                        <div *ngFor="let chats1 of chatsList1">
+                            {{chats1?.Message}}
+                              
+                        </div>
+                         </td>
+                       <td>
+                          <div *ngFor="let chats1 of chatsList1">
+                              {{chats1?.UserID}}
+                            
+                            </div>
+                       </td>
+                      
+                        </tr>
+                      </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-warning mx-sm-1 p-3">
+                <div class="card border-warning shadow text-warning p-3 my-card" >
+                  <span class="fa fa-inbox" aria-hidden="true"></span></div>
+               
+                <div class="text-warning text-center mt-2">
+              
+                    <table>
+                        <br>
+                      <h1>Mammography Chat History</h1>
+                          <tr>
+                            <th>Name</th>
+                            <th>Message</th>
+                            <th>UserID</th>
+                          </tr>
+                          <tr>
+                           <td>
+                              <div *ngFor="let chats2 of chatsList2">
+                                {{chats2?.Name}}
+                                &nbsp;
+                                &nbsp;
+                                </div>
+                           </td>
+                           <td>
+                          <div *ngFor="let chats2 of chatsList2">
+                              {{chats2?.Message}}
+                                
+                          </div>
+                           </td>
+                         <td>
+                            <div *ngFor="let chats2 of chatsList2">
+                                {{chats2?.UserID}}
+                              
+                              </div>
+                         </td>
+                        
+                          </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
