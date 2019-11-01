@@ -18,6 +18,9 @@ import { UserProfileComponent } from './component/user-profile/user-profile.comp
 import { DonationsComponent } from './component/donations/donations.component';
 import { ChatsComponent } from './component/chats/chats.component';
 
+import * as Chart from 'chart.js';
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyC1TA8JQDneK2YCLgDNUPpGQgFwvPByeaw",
   authDomain: "womanhealth-a607a.firebaseapp.com",

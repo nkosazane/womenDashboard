@@ -1,6 +1,75 @@
-<table  style="width:100%">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<body>
+  
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+     <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav">
+
+          <a class="nav-link navlogo text-center" href="index.php">
+            <img src="../../../assets/Capture.JPG">
+          </a>
+
+        <li class="nav-item">
+          <a class="nav-link sidefrst" routerLink="/dashboard">
+            <span class="textside">  Dashboard</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link sidesecnd" href="employee.php">
+            <span class="textside">  User Profile</span>
+          </a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link sidesthrd" routerLink="/tables">
+            <span class="textside">  Tables</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sidesforth" href="job.php">
+            <span class="textside">  Chats</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sidesfifth" href="quotation.php">
+            <span class="textside">  Donation</span>
+          </a>
+        </li>
+      
+      </ul>
+      
+      <ul class="navbar-nav2 ml-auto">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome Women's Health</a>
+            <ul class="dropdown-menu">
+                <li class="resflset"><a href="profile.php"><i class="fa fa-fw fa-cog"></i> Edit profile</a></li>
+                <li class="divider"></li>
+                <li class="resflset"><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+            </ul>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+
+
+
+
+
+<table class="User" style="margin-left:15%">
   <br>
-<caption><b>User Information</b></caption>
+  <br>
+<!-- <caption><b>User Information</b></caption>
+<caption><b>User Information</b></caption> -->
+<h1> User Information</h1>
 <br>
   <tr>
     <th>Name</th>
@@ -34,12 +103,13 @@
  </td>
  
  
+ 
   </tr>
 </table>
 <br>
-<table  style="width:100%">
+<table style="margin-left:15%">
   <br>
-<caption><b>Cancer Chat History</b></caption>
+<h1>Cancer Chat History</h1>
 <br>
   <tr>
     <th>Name</th>
@@ -70,9 +140,9 @@
   </tr>
 </table>
 <br>
-<table  style="width:100%">
+<table style="margin-left:15%">
     <br>
-  <caption><b>Martenal Issue Chat History</b></caption>
+  <h1>Martenal Issue Chat History</h1>
   <br>
     <tr>
       <th>Name</th>
@@ -103,10 +173,9 @@
     </tr>
   </table>
   <br>
-  <table  style="width:100%">
-      <br>
-    <caption><b>Mammography Chat History</b></caption>
+  <table class="Mammo" style="margin-left:15%">
     <br>
+  <h1>Mammography Chat History</h1>
       <tr>
         <th>Name</th>
         <th>Message</th>

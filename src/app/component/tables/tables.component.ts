@@ -20,7 +20,8 @@ export class TablesComponent implements OnInit {
   chatsList2;
 
   constructor(private adminServ: AdminService,
-    private angularfire: AngularFirestore) { 
+    private angularfire: AngularFirestore
+    ) { 
 
 
     // user list
