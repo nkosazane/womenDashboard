@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
   Internertcafe=true;
   registeredcafe = true;
   registereduser = true;
-  // location = true;
+  location = true;
  
   
   donation = {} as Donation;
@@ -102,7 +102,7 @@ export class DashboardComponent implements OnInit {
   f=[];
   x;
   gender;
-  location;
+  type;
   // age;
   b: number = 0;
   w: number = 0;
@@ -179,18 +179,18 @@ else{
 
 this.angularfire.collection('donation').valueChanges().subscribe((data:any)=>{
   console.log(data)
-//  this.f=[{data}]
-//   console.log(this.f[0].data[0]);
+ this.f=[{data}]
+  console.log(this.f[0].data[0]);
   for(let i=0;i<data.length ;i++){
     let type=data[i].type;
- 
+    // let race=data[i].ethnicity;
 
-// calculation for donation
-if(this.location == 'pretoria'){
+// calculation for gender
+if(type == 'money'){
 this.pay = this.pay +1
 console.log(this.pay)
 }
-else if(this.location == 'mpumalanga'){
+else if(type == 'items'){
 this.item1 = this.item1 +1
 console.log(this.item1)
 }
@@ -495,7 +495,7 @@ var chart = new Chart("chart", {
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
-            label: '# Donation',
+            label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -527,7 +527,9 @@ var chart = new Chart("chart", {
     }
 });
 
+
     }
+
   
 }
 
