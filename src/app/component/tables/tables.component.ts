@@ -101,14 +101,12 @@ export class TablesComponent implements OnInit {
   }
 
   ngOnInit() {
-//     this.angularfire.collection('donation').get().then((snapshot)=>{
-    
-// snapshot.docs.forEach(doc=>{
-//   console.log(doc.data())
-// })
-//     })
-   
+
   }
 
+  onDelete(key){
+    this.adminServ.deleteUser(key);
+    
+  }
 
 }
