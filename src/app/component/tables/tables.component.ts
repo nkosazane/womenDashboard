@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/service/admin.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-tables',
@@ -14,18 +15,19 @@ export class TablesComponent implements OnInit {
   chats = {} as Chats;
 
   userList;
-  donationList;
+  donationList:any[];
   chatsList;
   chatsList1;
   chatsList2;
-
+  key:string;
   constructor(private adminServ: AdminService,
     private angularfire: AngularFirestore
     ) { 
 
 
     // user list
-  this.angularfire.collection('users').snapshotChanges().subscribe(data => {
+  this.angularfire.collection('users').snapshotChanges().subscribe((data:any) => {
+   
     this.userList = data.map(e => {
       return{
         key: e.payload.doc.id,
@@ -34,18 +36,34 @@ export class TablesComponent implements OnInit {
     });
     console.log(this.userList)
     
+    
+  
   })
-
-    // donation list
-    this.angularfire.collection('donation').snapshotChanges().subscribe(data => {
-      this.donationList = data.map(e => {
-        return{
-          key: e.payload.doc.id,
-          ...e.payload.doc.data()
-        } as Donation
-      });
-      console.log(this.donationList)
+  this.angularfire.collection("users").valueChanges().subscribe((data:any)=>{
+    data.forEach(element =>{
+      this.key=element.userid
+      console.log(element)
+      this.angularfire.collection('donation').doc(this.key).collection('donations').snapshotChanges().subscribe(data => {
+        for(let i=0 ; i< data.length ;i++){
+          this.donationList.push( data.map(e => {
+            return{
+              key: e.payload.doc.id,
+              ...e.payload.doc.data()
+            } as Donation
+          })[i]);
+          
+        }
+       
+      })
     })
+    console.log("jj"+this.donationList)
+  })
+    // donation list
+  
+      this.angularfire.collection('donation').valueChanges().subscribe(data => {
+      this.donationList = data;
+        console.log(data)
+      });   
 
     //chats list
     this.angularfire.collection('chats').snapshotChanges().subscribe(data => {

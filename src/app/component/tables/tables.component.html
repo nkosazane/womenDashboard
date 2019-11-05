@@ -226,6 +226,10 @@
                 <div class="text-info text-center mt-2">
                     
                   
+                  <div *ngFor="let donation of donationList">
+
+                  </div>
+
 <table class="User" >
     <br>
     <br>
@@ -406,3 +410,10 @@
         </div>
      </div>
 </div>
+
+  <div *ngFor="let donation of donationList">
+  
+      {{donation.type}}
+  
+  </div>
+
