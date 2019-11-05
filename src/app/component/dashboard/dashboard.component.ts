@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
 import { AngularFirestore } from '@angular/fire/firestore';
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// import { Router } from '@angular/router';
-// import {MatPaginator} from '@angular/material/paginator';
-// import {MatTableDataSource} from '@angular/material/table';
-
-
-
 
 @Component({
   selector: 'app-dashboard',
@@ -82,7 +75,6 @@ export class DashboardComponent implements OnInit {
    myChart:any;
   f=[];
   x;
-  race;
   gender;
   b: number = 0;
   w: number = 0;
