@@ -22,7 +22,8 @@ export class TablesComponent implements OnInit {
   key:string;
   constructor(private adminServ: AdminService,
     private angularfire: AngularFirestore
-    ) { 
+    )
+     { 
 
 
     // user list

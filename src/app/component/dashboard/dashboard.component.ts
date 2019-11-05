@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AdminService } from 'src/app/service/admin.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,8 +11,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class DashboardComponent implements OnInit {
   itemList: any[];
   userList: any[];
+
+  donations:any;
   cafes: any;
   users: any;
+
   barChart: any;
   config: any;
   collection = { count: 60, data: [] };
@@ -22,14 +26,29 @@ export class DashboardComponent implements OnInit {
   boy: number=0;
   girl: number=0;
   other: number=0;
+  pay:number=0;
+  item1:number=0;
   Internertcafe=true;
   registeredcafe = true;
   registereduser = true;
-  location = true;
-  constructor(private firestore:AngularFirestore) {
+  // location = true;
+ 
+  
+  donation = {} as Donation;
+  chats = {} as Chats;
+
+
+  donationList:any[];
+  chatsList;
+  chatsList1;
+  chatsList2;
+  key:string;
+  constructor(private adminServ: AdminService,
+    private angularfire: AngularFirestore
+    ) {
     
     // user list
-  this.firestore.collection('users').snapshotChanges().subscribe(data => {
+  this.angularfire.collection('users').snapshotChanges().subscribe(data => {
     this.userList = data.map(e => {
       return{
         key: e.payload.doc.id,
@@ -40,42 +59,51 @@ export class DashboardComponent implements OnInit {
     
   })
 
-    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    // this.dataService.getItemChanges().subscribe(data => {
-    //   this.itemList = data.map(e => {
-    //     return {
-    //       key: e.payload.doc.id,
-    //       ...e.payload.doc.data()
-    //     } as InternetCafe;
-    //   });
-      // console.log(this.itemList);
-// paginator
-    //   for (var i = 0; i < this.itemList[0].count; i++) {
-    //     this.itemList[0].data.push(
-    //       {
-    //       id: i + 1,
-    //         value: "items number " + (i + 1)
-    //       }
-    //     );
-    //   }
-    //   this.config = {
-    //     itemsPerPage: 5,
-    //     currentPage: 1,
-    //     totalItems: this.itemList[0].count
-    //   };
-    // });
-    // this.dataService.getUserChanges().subscribe(users => {
-    //   this.userList = users
-    // }
-    // )
-    // this.users = this.firestore.collection('users').valueChanges();
-    // console.log(this.users)
+  this.angularfire.collection("users").valueChanges().subscribe((data:any)=>{
+    data.forEach(element =>{
+      this.key=element.userid
+      console.log(element)
+      this.angularfire.collection('donation').doc(this.key).collection('donations').snapshotChanges().subscribe(data => {
+        for(let i=0 ; i< data.length ;i++){
+          this.donationList.push( data.map(e => {
+            return{
+              key: e.payload.doc.id,
+              ...e.payload.doc.data()
+            } as Donation
+          })[i]);
+          
+        }
+       
+      })
+    })
+    console.log("jj"+this.donationList)
+  })
+    // donation list
+  
+      this.angularfire.collection('donation').valueChanges().subscribe(data => {
+      this.donationList = data;
+        console.log(data)
+      });   
+      this.donationList =[]
+    //chats list
+    this.angularfire.collection('chats').snapshotChanges().subscribe(data => {
+      this.chatsList = data.map(e => {
+        return{
+          key: e.payload.doc.id,
+          ...e.payload.doc.data()
+        } as Chats
+      });
+      console.log(this.chatsList)
+    })
  
    }
    myChart:any;
+   Chart:any=[];
   f=[];
   x;
   gender;
+  location;
+  // age;
   b: number = 0;
   w: number = 0;
   c: number = 0;
@@ -85,7 +113,8 @@ export class DashboardComponent implements OnInit {
     
 
   ngOnInit() {
-    this.firestore.collection('users').valueChanges().subscribe((data:any)=>{
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    this.angularfire.collection('users').valueChanges().subscribe((data:any)=>{
       console.log(data)
      this.f=[{data}]
       console.log(this.f[0].data[0]);
@@ -143,6 +172,69 @@ else{
         }
     });
   }
+})
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+this.angularfire.collection('donation').valueChanges().subscribe((data:any)=>{
+  console.log(data)
+//  this.f=[{data}]
+//   console.log(this.f[0].data[0]);
+  for(let i=0;i<data.length ;i++){
+    let type=data[i].type;
+ 
+
+// calculation for donation
+if(this.location == 'pretoria'){
+this.pay = this.pay +1
+console.log(this.pay)
+}
+else if(this.location == 'mpumalanga'){
+this.item1 = this.item1 +1
+console.log(this.item1)
+}
+else{
+this.other = this.other+1
+console.log(this.other)
+}
+this.Chart = new Chart('Chart', {
+    type: 'pie',
+    data: {
+        labels: ['money', 'items', 'Others'],
+        datasets: [{
+            label: '# Donation',
+            data: [this.pay,this.item1,this.other],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+}
 })
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -403,7 +495,7 @@ var chart = new Chart("chart", {
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
-            label: '# of Votes',
+            label: '# Donation',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
