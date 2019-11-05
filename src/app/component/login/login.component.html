@@ -4,15 +4,15 @@
 <img class="img-circle" src="../../../assets/Capture.JPG"/> 
 <br>
 
-<label for="uname"><b>Username</b></label>
+<label><b>Username</b></label>
 <br>
-<input type="text" placeholder="Enter Username" [(ngModel)]="user.email" required>
+<input type="text" placeholder="Enter Username">
 <br>
-<label for="psw"><b>Password</b></label>
+<label ><b>Password</b></label>
 <br>
-<input type="password" placeholder="Enter Password" [(ngModel)]="user.password" required>
+<input type="password" placeholder="Enter Password">
 <br>
-<button (click)="signInWithEmail()">Login</button>
+<button routerLink="/dashboard">Login</button>
       <!-- <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
