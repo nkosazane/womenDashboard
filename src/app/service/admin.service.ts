@@ -28,4 +28,7 @@ export class AdminService {
   getChats(){
     return this.angularfire.collection('chats').snapshotChanges();
   }
+  deleteUser(key){
+    this.angularfire.doc<Users>('users/'+key).delete();
+  }
 }

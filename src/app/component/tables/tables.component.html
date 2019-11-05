@@ -242,6 +242,7 @@
       <th>Gender</th>
       <th>Age</th>
       <th>Email</th>
+      <th>Remove</th>
     </tr>
     <tr>
      <td>
@@ -268,6 +269,13 @@
         </div>
    </td>
    
+   <td>
+    <div *ngFor="let users of userList">
+      <button (click)="onDelete(users.key)">delete</button>
+      
+      </div>
+ </td>
+ 
    
    
     </tr>
