@@ -64,7 +64,7 @@ export class TablesComponent implements OnInit {
       this.donationList = data;
         console.log(data)
       });   
-
+      this.donationList =[]
     //chats list
     this.angularfire.collection('chats').snapshotChanges().subscribe(data => {
       this.chatsList = data.map(e => {
