@@ -218,7 +218,7 @@
 <div class="row w-100">
         <div  style="margin-left:15%" class="col-md-10" >
             <div class="card border-info mx-sm-1 p-3">
-                <div class="card border-info shadow text-info p-3 my-card" >
+                <div style="margin-left:10%" class="card border-info shadow text-info p-3 my-card" >
                   <span class="fa fa-car" aria-hidden="true"></span></div>
                 <!-- <div class="text-info text-center mt-3">
                   <h4>Cars</h4>
@@ -227,11 +227,12 @@
                     
                   <br>
                   <br>
-                  <div *ngFor="let donation of donationList">
+                  <h1> User Information</h1>
+                  <!-- <div *ngFor="let donation of donationList">
                       <h1> User Information</h1>
-                  </div>
+                  </div> -->
 
-<table class="user"  >
+<table class="user"   >
     <br>
     <br>
   <!-- <caption><b>User Information</b></caption>
@@ -294,7 +295,7 @@
 
 <div  style="margin-left:15%" class="col-md-10" >
     <div class="card border-warning mx-sm-1 p-3">
-        <div class="card border-warning shadow text-warning p-3 my-card" >
+        <div style="margin-left:10%" class="card border-warning shadow text-warning p-3 my-card" >
           <span class="fa fa-inbox" aria-hidden="true"></span></div>
        
         <div class="text-warning text-center mt-2">
@@ -306,7 +307,7 @@
                 <h1>Mammography Chat History</h1>
             </div> -->
 
-            <table  class="user" >
+            <table  class="user">
                 <br>
                 <br>
           
@@ -357,7 +358,7 @@
   <div class="row w-100">
   <div style="margin-left:15%" class="col-md-10">
     <div class="card border-danger mx-sm-1 p-3">
-        <div class="card border-danger shadow text-danger p-3 my-card" >
+        <div style="margin-left:10%" class="card border-danger shadow text-danger p-3 my-card" >
           <span class="fa fa-heart" aria-hidden="true"></span>
         </div>
        
@@ -414,7 +415,7 @@
 <br>
 <div style="margin-left:15%"  class="col-md-10">
     <div class="card border-success mx-sm-1 p-3">
-        <div class="card border-success shadow text-success p-3 my-card">
+        <div style="margin-left:10%" class="card border-success shadow text-success p-3 my-card">
           <span class="fa fa-eye" aria-hidden="true"></span>
         </div>
         <!-- <div class="text-success text-center mt-3">
@@ -469,7 +470,7 @@
 <br>
 <div  style="margin-left:15%" class="col-md-10">
   <div class="card border-info mx-sm-1 p-3">
-      <div class="card border-info shadow text-info p-3 my-card" >
+      <div  style="margin-left:10%"  class="card border-info shadow text-info p-3 my-card" >
         <span class="fa fa-car" aria-hidden="true"></span></div>
       <!-- <div class="text-info text-center mt-3">
         <h4>Cars</h4>
@@ -492,7 +493,10 @@
 <tr>
 <th>Name</th>
 <th>Type</th>
+<th>Description</th>
 <th>location</th>
+<th>Phone Number</th>
+
 <th>Date</th>
 </tr>
 <tr>
@@ -508,6 +512,14 @@
   
 
 </div>
+</td>
+<td  style="text-align:left">
+    <div *ngFor="let donation of donationList">
+{{donation.description}}
+
+      
+      </div>
+</td>
 <td  style="text-align:left">
     <div *ngFor="let donation of donationList">
 {{donation.location}}
@@ -515,6 +527,14 @@
       
       </div>
 </td>
+<td  style="text-align:left">
+    <div *ngFor="let donation of donationList">
+{{donation.phoneNumber}}
+
+      
+      </div>
+</td>
+
 <td  style="text-align:left">
 <div *ngFor="let donation of donationList">
 {{donation.date | date:'dd-MM-yyy'}}

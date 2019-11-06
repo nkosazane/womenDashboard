@@ -402,23 +402,32 @@
 }
 .jumbotron{
   margin-top: 70px;
+    // border: 1px solid black;
 }
 .user {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  // border: 1px solid black;
+  // display: table-cell;
 }
 
 .user td, .user th {
   border: 1px solid black;
   padding: 8px;
-  width: 20% ;
+  width: 15% ;
   // text-align:center
+  // border: 1px solid black;
+  border-collapse: collapse;
 }
 
-.user tr:nth-child(even){background-color: #f2f2f2;}
+.user tr:nth-child(even){
+  background-color: #f2f2f2;
+}
 
-.user tr:hover {background-color: #ddd;}
+.user tr:hover {
+  background-color: #ddd;
+}
 
 .user th {
   padding-top: 12px;
@@ -426,6 +435,8 @@
   text-align: left;
   background-color: #e07394;
   color: white;
+  // border: 1px solid black;
+
 }
 h1{
   text-align: center;
