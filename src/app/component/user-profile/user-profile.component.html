@@ -71,57 +71,70 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
 ">
-
-<div class="jumbotron">
+<div class="jumbotron" >
 <div class="row w-100">
-        <div  style="margin-left:15%" class="col-md-4">
+        <div  style="margin-left:15%" class="col-md-10" >
             <div class="card border-info mx-sm-1 p-3">
                 <div class="card border-info shadow text-info p-3 my-card" >
                   <span class="fa fa-car" aria-hidden="true"></span></div>
                 <!-- <div class="text-info text-center mt-3">
                   <h4>Cars</h4>
                 </div> -->
-                <div class="text-info text-center mt-2">
+                <div class="text-info text-center mt-2" >
                     
-                  
-<table class="User" >
+                  <br>
+                  <br>
+                  <h1> User Information</h1>
+                  <!-- <div *ngFor="let donations of donat">
+                      <h1> User Information</h1>
+                  </div> -->
+
+<table class="user"  >
     <br>
     <br>
   <!-- <caption><b>User Information</b></caption>
   <caption><b>User Information</b></caption> -->
-  <h1> User Information</h1>
+
   <br>
     <tr>
       <th>Name</th>
       <th>Gender</th>
       <th>Age</th>
       <th>Email</th>
+      <th>Remove</th>
     </tr>
     <tr>
-     <td>
+     <td  style="text-align:left">
         <div *ngFor="let users of userList">
             {{users?.displayName}}
           
           </div>
      </td>
-     <td>
+     <td  style="text-align:left">
         <div *ngFor="let users of userList">
             {{users?.gender}}
           
           </div>
-          <td>
+          <td  style="text-align:left">
               <div *ngFor="let users of userList">
                   {{users?.age}}
                 
                 </div>
           </td>
-   <td>
+   <td  style="text-align:left">
       <div *ngFor="let users of userList">
           {{users?.email}}
         
         </div>
    </td>
    
+   <td  style="text-align:left">
+    <div *ngFor="let users of userList">
+      <button (click)="onDelete(users.key)">delete</button>
+      
+      </div>
+ </td>
+ 
    
    
     </tr>
@@ -130,7 +143,9 @@
                 </div>
             </div>
         </div>
-  
+       
+          
+ 
 
      </div>
 </div>

@@ -493,7 +493,7 @@ this.Chart = new Chart('Chart', {
 var chart = new Chart("chart", {
     type: 'pie',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Pretoria', 'Limpopo', 'Mphumalanga', 'Durban', 'Capetown', 'Johhansburg'],
         datasets: [{
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
