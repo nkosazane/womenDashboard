@@ -309,48 +309,47 @@
                 </div>
             </div>
         </div>
-        <br>
-        <br>
-        <div  style="margin-left:15%" class="col-md-4">
-            <div class="card border-warning mx-sm-1 p-3">
-                <div class="card border-warning shadow text-warning p-3 my-card" >
-                  <span class="fa fa-inbox" aria-hidden="true"></span></div>
-               
-                <div class="text-warning text-center mt-2">
-              
-                    <table  style="margin-left:15%">
-                        <br>
-                      <h1>Mammography Chat History</h1>
-                          <tr>
-                            <th>Name</th>
-                            <th>Message</th>
-                            <th>UserID</th>
-                          </tr>
-                          <tr>
-                           <td>
-                              <div *ngFor="let chats2 of chatsList2">
-                                {{chats2?.Name}}
-                                &nbsp;
-                                &nbsp;
-                                </div>
-                           </td>
-                           <td>
-                          <div *ngFor="let chats2 of chatsList2">
-                              {{chats2?.Message}}
-                                
-                          </div>
-                           </td>
-                         <td>
-                            <div *ngFor="let chats2 of chatsList2">
-                                {{chats2?.UserID}}
-                              
-                              </div>
-                         </td>
-                        
-                          </tr>
-                        </table>
-                </div>
-            </div>
-        </div>
      </div>
+</div>
+<div  style="margin-left:15%" class="col-md-4">
+  <div class="card border-warning mx-sm-1 p-3">
+      <div class="card border-warning shadow text-warning p-3 my-card" >
+        <span class="fa fa-inbox" aria-hidden="true"></span></div>
+     
+      <div class="text-warning text-center mt-2">
+    
+          <table  style="margin-left:15%">
+              <br>
+            <h1>Mammography History</h1>
+            <br>
+                <tr>
+                  <th>Name</th>
+                  <th>Message</th>
+                  <th>UserID</th>
+                </tr>
+                <tr>
+                 <td>
+                    <div *ngFor="let chats2 of chatsList2">
+                      {{chats2?.Name}}
+                      &nbsp;
+                      &nbsp;
+                      </div>
+                 </td>
+                 <td>
+                <div *ngFor="let chats2 of chatsList2">
+                    {{chats2?.Message}}
+                      
+                </div>
+                 </td>
+               <td>
+                  <div *ngFor="let chats2 of chatsList2">
+                      {{chats2?.UserID}}
+                    
+                    </div>
+               </td>
+              
+                </tr>
+              </table>
+      </div>
+  </div>
 </div>
