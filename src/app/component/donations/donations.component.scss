@@ -400,3 +400,30 @@ table {
 .jumbotron{
   margin-top: 70px;
 }
+
+.user td, .user th {
+  border: 1px solid black;
+  padding: 8px;
+  width: 10% ;
+  // text-align:center
+  // border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.user tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.user tr:hover {
+  background-color: #ddd;
+}
+
+.user th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #e07394;
+  color: white;
+  // border: 1px solid black;
+
+}

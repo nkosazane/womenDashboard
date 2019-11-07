@@ -224,64 +224,77 @@
       {{donation.type}}
   
   </div> -->
-  <div  style="margin-left:15%" class="col-md-4">
-    <div class="card border-info mx-sm-1 p-3">
-        <div class="card border-info shadow text-info p-3 my-card" >
-          <span class="fa fa-car" aria-hidden="true"></span></div>
-        <!-- <div class="text-info text-center mt-3">
-          <h4>Cars</h4>
-        </div> -->
-        <div class="text-info text-center mt-2">
-            
+  <div  style="margin-left:15%" class="col-md-9">
+  <div class="card border-info mx-sm-1 p-3">
+      <div  style="margin-left:10%"  class="card border-info shadow text-info p-3 my-card" >
+        <span class="fa fa-car" aria-hidden="true"></span></div>
+      <!-- <div class="text-info text-center mt-3">
+        <h4>Cars</h4>
+      </div> -->
+      <div class="text-info text-center mt-2">
           
-          <div *ngFor="let donation of donationList">
+        <br>
+        <br>
+        <h1> Donation Information</h1>
+        <!-- <div *ngFor="let donation of donationList">
+            <h1> Donation Information</h1>
+        </div> -->
 
-          </div>
-
-<table class="User" >
+<table class="user" >
 <br>
 <br>
-<!-- <caption><b>User Information</b></caption>
-<caption><b>User Information</b></caption> -->
-<h1> Donation Information</h1>
+
+
 <br>
 <tr>
 <th>Name</th>
-<th>Surname</th>
 <th>Type</th>
+<th>Description</th>
 <th>location</th>
+<th>Phone Number</th>
+
 <th>Date</th>
 </tr>
 <tr>
-<td>
+<td  style="text-align:left">
 <div *ngFor="let donation of donationList">
-  {{donation.name}}
-  
-  </div>
+{{donation.name}}
+
+</div>
 </td>
-<td>
+<td  style="text-align:left">
+<div *ngFor="let donation of donationList">
+{{donation.type}}
+  
+
+</div>
+</td>
+<td  style="text-align:left">
     <div *ngFor="let donation of donationList">
-      {{donation.surname}}
+{{donation.description}}
+
       
       </div>
-    </td>
-<td>
-<div *ngFor="let donation of donationList">
-  {{donation.type}}
-    
-  
-  </div>
-  <td>
-      <div *ngFor="let donation of donationList">
-  {{donation.location}}
+</td>
+<td  style="text-align:left">
+    <div *ngFor="let donation of donationList">
+{{donation.location}}
 
-        
-        </div>
-  </td>
-<td>
+      
+      </div>
+</td>
+<td  style="text-align:left">
+    <div *ngFor="let donation of donationList">
+{{donation.phoneNumber}}
+
+      
+      </div>
+</td>
+
+<td  style="text-align:left">
 <div *ngFor="let donation of donationList">
-  {{donation.date | date:'dd-MM-yyy'}}
- 
+{{donation.date | date:'dd-MM-yyy'}}
+
 
 </div>
 </td>
@@ -290,9 +303,8 @@
 
 </tr>
 </table>
-        
-        </div>
-    </div>
+      
+      </div>
+  </div>
 </div>
-
 
